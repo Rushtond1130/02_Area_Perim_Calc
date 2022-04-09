@@ -1,11 +1,20 @@
+from this import d
+
+
 valid = False
 while not valid:
 
-    response = float(input("Enter a number: "))
+    error = "Please enter a number that is more than zero"
+    try:
 
-    if response > 0:
-        valid = True
+        response = float(input("Enter a number: "))
 
-    else:
-        print("Please enter a number that is more than zero")     
-        print()          
+        if response > 0:
+            valid = True
+
+        else:
+            print("Please enter a number that is more than zero")     
+            print()     
+
+    except ValueError:
+        print(error)
